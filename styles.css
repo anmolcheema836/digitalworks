@@ -1,258 +1,300 @@
 /* General Styles */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-  }
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.header {
+  background-color: #007fff; /* Azure color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;  /* Padding to create space */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1000;
+  box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+  flex-wrap: wrap; /* Allow items to wrap if necessary */
+}
+
+.logo img {
+  height: 80px; /* Default logo size */
+  width: auto; /* Maintain aspect ratio */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #0056b3; /* Darker azure on hover */
+  background-color: white;
+  padding: 5px 10px;
+}
+
+/* Buttons */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  padding-right: 30px; /* Adjust right padding */
+}
+
+.nav-buttons .whatsapp-btn {
+  text-decoration: none;
+  padding: 10px 15px;
+  color: rgb(54, 54, 54);
+  background-color: #17B169; /* Darker Azure */
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.nav-buttons .phone-btn {
+  text-decoration: none;
+  padding: 10px 20px;
+  color: rgb(54, 54, 54);
+  background-color: #fcff37; /* Darker Azure */
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.nav-buttons .whatsapp-btn:hover {
+  background-color: #00b460; /* Even darker on hover */
+  transform: scale(1.05);
+}
+.nav-buttons .phone-btn:hover {
+  background-color: #d6da00;
+  transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+
+/* Large Tablets & Smaller */
+@media screen and (max-width: 1024px) {
   .header {
-    background-color: #007fff; /* Azure color */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;  /* Added padding to create space on the left and right */
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: auto;
-    z-index: 1000;
-  }
-  
-  .logo img {
-    height: 80px; /* Adjust based on your logo size */
-    width: 100px;
-    padding-left: 150px;
-  }
-  
-  /* Navigation Links */
-  .nav-links {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links li {
-    margin: 0 15px;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px;
-    font-weight: bold;
-  }
-  
-  .nav-links a:hover {
-    color: #0056b3; /* Darker azure on hover */
-    background-color: white;
-    padding: 5px 10px;
-  }
-  
-  /* Buttons */
-  .nav-buttons {
-    display: flex;
-    gap: 10px;
-    padding-right: 150px;
-  }
-  
-  .nav-buttons .whatsapp-btn {
-    text-decoration: none;
-    padding: 10px 15px;
-    color: rgb(54, 54, 54);
-    background-color: #17B169; /* Darker Azure */
-    border-radius: 5px;
-    font-weight: bold;
-    display: inline-block;
+      padding: 10px 20px;  /* Adjusted padding for larger tablets */
   }
 
-  .nav-buttons .phone-btn {
-    text-decoration: none;
-    padding: 10px 20px;
-    color: rgb(54, 54, 54);
-    background-color: #fcff37; /* Darker Azure */
-    border-radius: 5px;
-    font-weight: bold;
-    display: inline-block;
+  .logo img {
+      height: 60px; /* Adjust logo size for tablets */
   }
-  
-  .nav-buttons .whatsapp-btn:hover {
-    background-color: #00b460; /* Even darker on hover */
-    transform: scale(1.05);
+
+  .nav-links {
+      font-size: 14px; /* Smaller font size for nav links */
+      gap: 15px; /* Adjust space between nav links */
   }
-  .nav-buttons .phone-btn:hover {
-    background-color: #d6da00;
-    transform: scale(1.05);
+
+  .nav-buttons {
+      display: none; /* Hide buttons for tablet and mobile */
   }
-  /* Mobile Responsiveness */
-  @media screen and (max-width: 1024px) {
-    .header {
-      padding: 10px 20px;  /* Adjusted padding for larger tablets */
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .header {
-      flex-direction: column;
+}
+
+/* Tablets & Smaller Devices */
+@media screen and (max-width: 768px) {
+  .header {
+      flex-direction: row; /* Keep navbar items horizontal */
+      justify-content: space-between; /* Logo on left, links on right */
       align-items: center;
-      padding: 20px 20px;  /* Adjusted padding for better spacing on smaller screens */
-    }
-  
-    .nav-links {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      margin: 20px 0;
-    }
-  
-    .nav-links li {
-      margin: 10px 0;
-    }
-  
-    .buttons {
-      width: 100%;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-  
-    .buttons .btn {
-      width: 48%;
-      text-align: center;
-    }
+      padding: 10px 15px;  /* Adjust padding */
   }
-  
-  @media screen and (max-width: 480px) {
-    .logo img {
-      height: 40px;
-    }
-  
-    .nav-links a {
-      font-size: 14px;
-    }
-  
-    .buttons .btn {
-      font-size: 14px;
-      padding: 8px 12px;
-    }
+
+  .logo img {
+      height: 60px; /* Adjust logo size for smaller screens */
   }
-  
-  /* Hero Section */
-  .hero {
-    position: relative;
-    background-image: url('assets/herobgg.jpg'); /* Replace with your image path */
-    background-size: cover;
-    background-position: center;
-    height: 60vh; /* Full viewport height */
+
+  .nav-links {
+      display: flex;
+      justify-content: flex-end; /* Keep nav links on the right */
+      flex-direction: row;
+      gap: 15px;
+      font-size: 14px; /* Smaller font size for nav links */
+  }
+
+  .nav-links li {
+      margin: 0 10px;
+  }
+
+  /* Hide navbar buttons on mobile */
+  .nav-buttons {
+      display: none; /* Hide on smaller screens */
+  }
+}
+
+/* Phones & Smaller Devices */
+@media screen and (max-width: 480px) {
+  .header {
     display: flex;
-    justify-content: center;
+    flex-direction: row;        /* Keep items horizontally aligned */
+    justify-content: space-between;
     align-items: center;
-    color: white;
-    text-align: left;
-    padding: 20px;
+    width: 100%;                /* Adjust width according to the screen */
+    padding: 10px 15px;         /* Adjust padding */
+  }
+
+  .logo img {
+    height: 50px;              /* Resize logo for mobile */
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 10px;                  /* Space between the links */
+  }
+
+  .nav-links a {
+    font-size: 14px;            /* Adjust font size for mobile */
+    text-decoration: none;
+    padding: 5px 10px;          /* Padding for nav links */
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background-image: url('assets/herobgg.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 60vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: left;
 }
 
 .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent black overlay */
-    z-index: 1; /* Ensure overlay is above the image but below content */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent black overlay */
+  z-index: 1; /* Ensure overlay is above the image but below content */
 }
 
 .hero-content {
-    max-width: 600px;
-    padding-left: 60px;
-    padding-top: 100px;
-    padding-right: 1000px;
-    border-radius: 10px;
-    z-index: 2;
+  max-width: 600px;
+  width: 100%; /* Ensure content adapts to available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px; /* Uniform padding */
+  border-radius: 10px;
+  z-index: 2;
 }
 
 .hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+  font-size: 2.5em;
+  margin-bottom: 10px;
 }
 
 .hero .subtitle {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
 .buttons {
-    margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .buttons .whatsapp-btn,
 .buttons .phone-btn {
-    text-decoration: none;
-    padding: 10px 20px;
-    color: white;
-    font-weight: bold;
-    display: inline-block;
-    margin-right: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .buttons .whatsapp-btn {
-    background-color: #17B169;
-    color:black;
+  background-color: #17B169;
+  color: black;
 }
 
 .buttons .phone-btn {
-    background-color: #fcff37;
-    color: black;
+  background-color: #fcff37;
+  color: black;
 }
 
 .buttons .whatsapp-btn:hover {
-    background-color: #008848;
-    transform: scale(1.05);
+  background-color: #008848;
+  transform: scale(1.05);
 }
-.buttons .phone-btn:hover{
+
+.buttons .phone-btn:hover {
   background-color: #c5c902;
   transform: scale(1.05);
 }
+
 .hero .footer-text {
-    font-size: 1.2em;
-    margin-top: 20px;
+  font-size: 1.2em;
+  margin-top: 20px;
 }
 
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
-    .hero-content {
-        max-width: 90%; /* Adjust for smaller screens */
-        text-align: center;
-    }
+  .hero-content {
+    max-width: 90%; /* Adjust for smaller screens */
+    text-align: center;
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
 
-    .hero h1 {
-        font-size: 2em;
-    }
+  .hero h1 {
+    font-size: 2em; /* Adjusted title size */
+  }
 
-    .hero .subtitle {
-        font-size: 1em;
-    }
+  .hero .subtitle {
+    font-size: 1em; /* Smaller subtitle */
+  }
 
-    .buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .buttons {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px; /* Add space between stacked buttons */
+  }
 
-    .buttons .whatsapp-btn,
-    .buttons .phone-btn {
-        margin: 5px 0;
-    }
+  .buttons .whatsapp-btn,
+  .buttons .phone-btn {
+    margin: 5px 0;
+    font-size: 14px;  /* Adjust button font size */
+    padding: 8px 12px;  /* Adjust button padding */
+  }
+
+  .hero .footer-text {
+    font-size: 1em; /* Smaller footer text */
+  }
 }
+
 
 /* Brands Slider Section */
 .brands-slider {
   text-align: center;
   padding: 1rem 0;
-  background-color: #d3d3d3d3;
+  background-color: #d3d3d3;
 }
 
 /* Brands Heading */
@@ -268,7 +310,8 @@ body {
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-left: 400px;
+  display: flex;
+  justify-content: center; /* Center the slider */
 }
 
 /* Logo Row */
@@ -276,15 +319,14 @@ body {
   display: flex;
   justify-content: flex-start;
   transition: transform 0.5s ease;
-  padding-left: 80px; /* Add space on the left */
-  padding-right: 80px; /* Add space on the right */
+  gap: 15px; /* Space between logos using gap */
 }
 
 .brand-logo {
-  width: 150px; /* Set logo size to 100px */
-  height: 120px; /* Set logo size to 100px */
-  object-fit: contain; /* Automatically resize image to fit within the 100x100 px box */
-  margin-right: 15px; /* Add minimal space between logos */
+  width: 150px; /* Default size for logo */
+  height: 120px; /* Default size for logo */
+  object-fit: contain;
+  flex-shrink: 0; /* Prevent logos from shrinking */
 }
 
 /* Arrows for slider navigation */
@@ -293,23 +335,22 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 2rem;
-  color: white; /* White color for the arrow icon */
-  background-color: #1975d1; /* Dark blue color for the circle background */
+  color: white;
+  background-color: #1975d1;
   padding: 0.5rem;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 20; /* Ensure the arrows are on top */
+  z-index: 20;
 }
 
 /* Position left and right arrows */
 .arrow-left {
-  left: 0px;
+  left: 10px;
 }
 
 .arrow-right {
-  right: 780px;
+  right: 10px;
 }
-
 
 /* Dots Navigation */
 .dots-navigation {
@@ -333,9 +374,32 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .slider-container {
+    padding: 0 15px; /* Add padding for smaller screens */
+  }
+
+  .logo-row {
+    justify-content: center; /* Center the logos on smaller screens */
+  }
+
   .brand-logo {
-    width: 80px; /* Reduce size on smaller screens */
-    height: 80px; /* Reduce size on smaller screens */
+    width: 40px; /* Smaller size on mobile */
+    height: 40px; /* Smaller size on mobile */
+  }
+
+  .arrow-left, .arrow-right {
+    font-size: 1.5rem; /* Smaller arrows for mobile */
+    padding: 0.4rem;
+  }
+
+  .dots-navigation {
+    margin-top: 1rem;
+    font-size: 0.8rem; /* Smaller dots on mobile */
+  }
+
+  .dot {
+    height: 8px;
+    width: 8px;
   }
 }
 
