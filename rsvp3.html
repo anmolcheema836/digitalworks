@@ -10,7 +10,7 @@
     /* Custom Styles for the RSVP Page */
     body {
       font-family: Arial, sans-serif;
-      background-color: #ffffff;
+      background-color: #f9f9f9;
       color: #333;
     }
     .header {
@@ -185,7 +185,7 @@
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
-      background-color: #ffffff;
+      background-color: #fff;
       border-radius: 10px;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
@@ -250,73 +250,110 @@
         </div>
       </header>
 
-  <section class="rsvp-section">
-    <div class="container rsvp-container">
-      <h1 class="text-center">You Are Invited to DigitalWorks & More's VIP Hollywood Glamour Party</h1>
-      <h2 class="text-center">Event: Media Agency Appreciation Party</h2>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <script type="text/javascript">
+    // Initialize EmailJS with your public key
+    (function() {
+        emailjs.init('QNxMkM0MOE-7G-Ywj'); // Replace with your actual EmailJS public key
+    })();
+  </script>
+</head>
+<body>
+    <section class="rsvp-section">
+        <div class="container rsvp-container">
+            <h1 class="text-center">You Are Invited to DigitalWorks & More's VIP Hollywood Glamour Party</h1>
+            <h2 class="text-center">Event: Media Agency Appreciation Party</h2>
 
-      <p class="text-center"><strong>Venue:</strong> The Marriot Kuala Lumpur, Malaysia</p>
-      <p class="text-center"><strong>Time:</strong> 4:00 PM</p>
-      <p class="text-center"><strong>Date:</strong> Saturday, 23rd November 2024</p>
+            <p class="text-center"><strong>Venue:</strong> The Marriot Kuala Lumpur, Malaysia</p>
+            <p class="text-center"><strong>Time:</strong> 4:00 PM</p>
+            <p class="text-center"><strong>Date:</strong> Saturday, 23rd November 2024</p>
 
-      <form action="rsvp.php" method="POST">
-        <h3>Fill in the section:</h3>
-        
-        <!-- Name, Company, Email -->
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" name="name" required>
-        </div>
-      
-        <div class="mb-3">
-          <label for="company-name" class="form-label">Full Company Name</label>
-          <input type="text" class="form-control" id="company-name" name="company-name" required>
-        </div>
-      
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-      
-        <div class="mb-3">
-          <label for="designation" class="form-label">Designation</label>
-          <input type="text" class="form-control" id="designation" name="designation" required>
-        </div>
-      
-        <div class="mb-3">
-          <label for="contact-number" class="form-label">Contact Number</label>
-          <input type="tel" class="form-control" id="contact-number" name="contact-number" required>
-        </div>
-      
-        <div class="mb-3">
-          <label for="whatsapp" class="form-label">Mobile Phone or WhatsApp Number</label>
-          <input type="tel" class="form-control" id="whatsapp" name="whatsapp" required>
-        </div>
-      
-        <h3>My Preferred Beverage Options (Can Select 2 options)</h3>
-        <div class="beverages">
-          <label><input type="checkbox" name="beverage1[]" value="Beer"> Beer</label>
-          <label><input type="checkbox" name="beverage1[]" value="Whiskey"> Whiskey</label>
-          <label><input type="checkbox" name="beverage1[]" value="Gin"> Gin</label>
-          <label><input type="checkbox" name="beverage1[]" value="White Wine"> White Wine</label>
-          <label><input type="checkbox" name="beverage1[]" value="Red Wine"> Red Wine</label>
-          <label><input type="checkbox" name="beverage1[]" value="Do not drink alcohol"> I do not drink alcohol</label>
-        </div>
-      
-        <h3>Will You Be Attending?</h3>
-        <div class="mb-3">
-          <label><input type="radio" name="attendance" value="Attending" required> I will be attending</label>
-        </div>
-        <div class="mb-3">
-          <label><input type="radio" name="attendance" value="Not Attending"> I will not be attending</label>
-        </div>
-      
-        <button type="submit" class="btn btn-primary w-100">RSVP Now</button>
-      </form>
-      
-  </section>
+            <form id="rsvpForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="company-name" class="form-label">Full Company Name</label>
+                    <input type="text" class="form-control" id="company-name" name="company-name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contact-number" class="form-label">Contact Number</label>
+                    <input type="tel" class="form-control" id="contact-number" name="contact-number" required>
+                </div>
+                <div class="mb-3">
+                    <label for="whatsapp" class="form-label">Mobile Phone/WhatsApp Number</label>
+                    <input type="tel" class="form-control" id="whatsapp" name="whatsapp" required>
+                </div>
 
-  <!-- Bootstrap JS and Dependencies -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+                <h3>My Preferred Beverage Options (Can Select 2 options)</h3>
+                <div class="beverages">
+                    <label><input type="checkbox" name="beverage1" value="Beer"> Beer</label>
+                    <label><input type="checkbox" name="beverage1" value="Whiskey"> Whiskey</label>
+                    <label><input type="checkbox" name="beverage1" value="Gin"> Gin</label>
+                    <label><input type="checkbox" name="beverage1" value="White Wine"> White Wine</label>
+                    <label><input type="checkbox" name="beverage1" value="Red Wine"> Red Wine</label>
+                    <label><input type="checkbox" name="beverage1" value="Do not drink alcohol"> I do not drink alcohol</label>
+                </div>
+
+                <h3>Will You Be Attending?</h3>
+                <div class="mb-3">
+                    <label><input type="radio" name="attendance" value="Attending" required> I will be attending</label>
+                </div>
+                <div class="mb-3">
+                    <label><input type="radio" name="attendance" value="Not Attending"> I will not be attending</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">RSVP Now</button>
+            </form>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        document.getElementById('rsvpForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent default form submission
+
+            var formData = new FormData(this);  // Gather the form data
+
+            // Create a custom formatted array for beverage options (if any)
+            var beverages = [];
+            if (formData.has('beverage1')) {
+                formData.getAll('beverage1').forEach(function(beverage) {
+                    beverages.push(beverage); // Add each selected beverage to the array
+                });
+            } else {
+                beverages.push('No beverage selected'); // Default value if no beverage selected
+            }
+
+            // Prepare data for the email template
+            var emailData = {
+                name: formData.get('name'),
+                company_name: formData.get('company-name'),
+                email: formData.get('email'),
+                contact_number: formData.get('contact-number'),
+                whatsapp: formData.get('whatsapp'),
+                beverages: beverages,  // Pass beverages as an array
+                attendance: formData.get('attendance') ? formData.get('attendance') : 'No answer'
+            };
+
+            console.log(emailData); // Check that all variables are correctly populated
+
+            // Send the email using EmailJS
+            emailjs.send('service_dql4nbm', 'template_j4njqh9', emailData)
+                .then(function(response) {
+                    alert('Your RSVP has been submitted successfully!');
+                }, function(error) {
+                    alert('Oops! Something went wrong. Please try again later.');
+                });
+        });
+    </script>
+
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>

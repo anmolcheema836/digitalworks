@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <!-- Load the EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        // Initialize EmailJS with your public key
+        (function() {
+            emailjs.init('QNxMkM0MOE-7G-Ywj'); // Replace with your actual EmailJS public key
+        })();
+    </script>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            // Attach the submit event to the form
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();  // Prevent the form from reloading the page
+
+                // Send the form data using the EmailJS service and template
+                emailjs.sendForm('service_dql4nbm', 'template_j4njqh9', this)
+                    .then((response) => {
+                        console.log('SUCCESS!', response);
+                        alert("Your message has been sent!");
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                        alert("Oops! Something went wrong.");
+                    });
+            });
+        }
+    </script>
+
+</head>
+<body>
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+        <!-- Hidden field for contact number (optional, customize as needed) -->
+        <input type="hidden" name="contact_number" value="697483">
+
+        <label for="user_name">Name</label>
+        <input type="text" id="user_name" name="user_name" required>
+
+        <label for="user_email">Email</label>
+        <input type="email" id="user_email" name="user_email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <input type="submit" value="Send">
+    </form>
+</body>
+</html>
