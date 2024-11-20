@@ -669,3 +669,33 @@ body {
     margin-top: -90px;
   }
 }
+
+/* Why We Love What We Do Section */
+.why-we-love {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+.why-we-love-heading {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.why-we-love-description {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.why-we-love-image img {
+  width: 100%;
+  max-width: 800px;  /* Adjust the max width for your image */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
