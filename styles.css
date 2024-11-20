@@ -394,7 +394,7 @@ body {
   .arrow-right{
     font-size: 20px; /* Smaller arrows for mobile */
     padding: 5px;
-    margin-right: 15px;
+    margin-right: 20px;
   }
   .dots-navigation {
     margin-top: 1rem;
@@ -594,7 +594,7 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
-  padding-top: 70px; /* Adjust to push the content down */
+  padding-top: 200px; /* Adjust to push the content down on desktop */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -603,7 +603,7 @@ body {
 
 /* Name and Designation Box (Info Box) */
 .info-box {
-  margin-top: 20px;
+  margin-top: 10px;
   background-color: #1975d1; /* Blue background */
   color: white;
   text-align: center;
@@ -612,12 +612,12 @@ body {
 }
 
 .name {
-  font-size: 1.2rem;
+  font-size: .8rem;
   font-weight: bold;
 }
 
 .designation {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
 }
 
 /* Snippet Text under Info Box */
@@ -626,7 +626,7 @@ body {
   padding: 2rem;
   text-align: center;
   position: absolute;
-  font-size: 1rem;
+  font-size: 0.6rem;
   color: black;
   margin-left: 10px;
   margin-right: 10px;
@@ -640,21 +640,32 @@ body {
   }
 
   .team-member {
-    width: 90%;
-    height: 350px;
+    width: 90%;  /* Make the team member container width smaller */
+    height: auto; /* Allow the height to adjust based on content */
     margin-bottom: 2rem;
   }
 
-  .info-box {
-    padding: 0.8rem;
+  /* Ensure the Info Box and Snippet Box Stack Properly on Mobile */
+  .snippet-container {
+    padding-top: 300px; 
+    display: flex;
+    flex-direction: column;/* Ensure space between info box and snippet box */
+    align-items: center;
   }
 
-  .snippet-container {
-    padding-top: 60px;
+  .info-box {
+    width: 70%; /* Ensure it fills the width on mobile */
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative; /* Make sure it's positioned relative to its container */
   }
 
   .snippet {
-    padding: 0.8rem;
+    width: 80%;
     font-size: 0.9rem;
+    position: relative; /* Remove absolute positioning so it stays within the flow */
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -90px;
   }
 }
