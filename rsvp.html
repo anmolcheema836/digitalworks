@@ -251,15 +251,7 @@
       </header>
 
   <section class="rsvp-section">
-    <div class="container rsvp-container">
-      <h1 class="text-center">You Are Invited to DigitalWorks & More's VIP Hollywood Glamour Party</h1>
-      <h2 class="text-center">Event: Media Agency Appreciation Party</h2>
-
-      <p class="text-center"><strong>Venue:</strong> The Marriot Kuala Lumpur, Malaysia</p>
-      <p class="text-center"><strong>Time:</strong> 4:00 PM</p>
-      <p class="text-center"><strong>Date:</strong> Saturday, 23rd November 2024</p>
-
-      <form action="#" method="POST">
+    <form action="rsvp.php" method="POST">
         <h3>Fill in the section:</h3>
         
         <!-- Name, Company, Email -->
@@ -267,42 +259,42 @@
           <label for="name" class="form-label">Name</label>
           <input type="text" class="form-control" id="name" name="name" required>
         </div>
-
+      
         <div class="mb-3">
           <label for="company-name" class="form-label">Full Company Name</label>
           <input type="text" class="form-control" id="company-name" name="company-name" required>
         </div>
-
+      
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
           <input type="email" class="form-control" id="email" name="email" required>
         </div>
-
+      
         <div class="mb-3">
           <label for="designation" class="form-label">Designation</label>
           <input type="text" class="form-control" id="designation" name="designation" required>
         </div>
-
+      
         <div class="mb-3">
           <label for="contact-number" class="form-label">Contact Number</label>
           <input type="tel" class="form-control" id="contact-number" name="contact-number" required>
         </div>
-
+      
         <div class="mb-3">
           <label for="whatsapp" class="form-label">Mobile Phone WhatsApp Number</label>
           <input type="tel" class="form-control" id="whatsapp" name="whatsapp" required>
         </div>
-
+      
         <h3>My Preferred Beverage Options (Can Select 2 options)</h3>
         <div class="beverages">
-          <label><input type="checkbox" name="beverage1" value="Beer"> Beer</label>
-          <label><input type="checkbox" name="beverage1" value="Whiskey"> Whiskey</label>
-          <label><input type="checkbox" name="beverage1" value="Gin"> Gin</label>
-          <label><input type="checkbox" name="beverage1" value="White Wine"> White Wine</label>
-          <label><input type="checkbox" name="beverage1" value="Red Wine"> Red Wine</label>
-          <label><input type="checkbox" name="beverage1" value="Do not drink alcohol"> I do not drink alcohol</label>
+          <label><input type="checkbox" name="beverage1[]" value="Beer"> Beer</label>
+          <label><input type="checkbox" name="beverage1[]" value="Whiskey"> Whiskey</label>
+          <label><input type="checkbox" name="beverage1[]" value="Gin"> Gin</label>
+          <label><input type="checkbox" name="beverage1[]" value="White Wine"> White Wine</label>
+          <label><input type="checkbox" name="beverage1[]" value="Red Wine"> Red Wine</label>
+          <label><input type="checkbox" name="beverage1[]" value="Do not drink alcohol"> I do not drink alcohol</label>
         </div>
-
+      
         <h3>Will You Be Attending?</h3>
         <div class="mb-3">
           <label><input type="radio" name="attendance" value="Attending" required> I will be attending</label>
@@ -310,10 +302,10 @@
         <div class="mb-3">
           <label><input type="radio" name="attendance" value="Not Attending"> I will not be attending</label>
         </div>
-
+      
         <button type="submit" class="btn btn-primary w-100">RSVP Now</button>
       </form>
-    </div>
+      
   </section>
 
   <!-- Bootstrap JS and Dependencies -->
