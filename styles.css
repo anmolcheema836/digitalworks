@@ -643,11 +643,17 @@ body {
     width: 90%;  /* Make the team member container width smaller */
     height: auto; /* Allow the height to adjust based on content */
     margin-bottom: 2rem;
+
+  }
+  img {
+    width: 100%; /* Make image width 100% of the container */
+    height: auto; /* Ensure the height scales proportionally */
+    object-fit: cover; /* Ensures images fit the container without distortion */
   }
 
   /* Ensure the Info Box and Snippet Box Stack Properly on Mobile */
   .snippet-container {
-    padding-top: 300px; 
+    padding-top: 500px; 
     display: flex;
     flex-direction: column;/* Ensure space between info box and snippet box */
     align-items: center;
