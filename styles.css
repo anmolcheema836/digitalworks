@@ -170,7 +170,7 @@ body {
 /* Hero Section */
 .hero {
   position: relative;
-  background-image: url('assets/herobgg.jpg'); /* Replace with your image path */
+  background-image: url('assets/banner.png'); /* Replace with your image path */
   background-size: cover;
   background-position: center;
   height: 60vh; /* Full viewport height */
