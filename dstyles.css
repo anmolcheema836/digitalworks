@@ -152,10 +152,12 @@ body {
   }
 
   .logo img {
-    height: 50px;              /* Resize logo for mobile */
+    padding-top: 30px;
+    height: 40px;              /* Resize logo for mobile */
   }
 
   .nav-links {
+    padding-top: 40px;
     display: flex;
     gap: 10px;                  /* Space between the links */
   }
@@ -765,10 +767,10 @@ body {
   background-color: #f1c40f; /* Yellow background for visibility */
   color: #2c3e50; /* Dark text color */
   text-align: center;
-  padding: 5px 0;
-  font-size: 7px;
+  padding: 7px 0;
+  font-size: 15px;
   font-weight: bold;
-  height: 10px;
+  height: 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -776,7 +778,7 @@ body {
   z-index: 1000; /* Ensure it stays on top of other content */
 }
 .under-construction img {
-  max-width: 10px; /* Adjust the size of the icon */
+  max-width: 25px; /* Adjust the size of the icon */
   vertical-align: middle;
   margin-right: 2px;
 }

@@ -157,10 +157,12 @@
   }
 
   .logo img {
-    height: 50px;              /* Resize logo for mobile */
+    padding-top: 40px;
+    height: 100px;              /* Resize logo for mobile */
   }
 
   .nav-links {
+    padding-top: 40px;
     display: flex;
     gap: 10px;                  /* Space between the links */
   }
@@ -240,10 +242,38 @@
     border-radius: 10px; /* Adjust for smaller devices */
   }
 }
-
+/* Add styles for the "Under Construction" banner */
+.under-construction {
+  background-color: #f1c40f; /* Yellow background for visibility */
+  color: #2c3e50; /* Dark text color */
+  text-align: center;
+  padding: 7px 0;
+  font-size: 15px;
+  font-weight: bold;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000; /* Ensure it stays on top of other content */
+}
+.under-construction img {
+  max-width: 25px; /* Adjust the size of the icon */
+  vertical-align: middle;
+  margin-right: 2px;
+}
+.under-construction p {
+  display: inline; /* Display text inline with the image */
+}
   </style>
 </head>
 <body>
+  <!-- Under Construction Banner -->
+<section class="under-construction">
+  <img src="assets/under.png" alt="Under Construction">
+  <p>Our website is currently under construction !</p>
+</section>
+
     <header class="header">
         <div class="logo">
           <img src="assets/logo.png" alt="Logo">
