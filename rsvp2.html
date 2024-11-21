@@ -177,14 +177,14 @@
       background-color: #fff;
       border-radius: 15px;
       box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-      background-image: url('assets/bg.png'); /* Placeholder background */
+      background-image: url('assets/back.png'); /* Placeholder background */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       border: 10px solid rgba(0, 0, 0, 0.1);
     }
     .rsvp-container {
-      background-color: #fff;
+      background-color: #ffffffd7;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 30px;
@@ -206,9 +206,41 @@
     }
     iframe {
       width: 100%;
-      height: 1800px;
+      height: 2250px;
       border: none;
     }
+    .image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px; /* Match the container styling */
+  margin-bottom: 20px; /* Space below the image */
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.blur-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Adjust height for blur effect */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  pointer-events: none; /* Ensure it doesn't affect interactions */
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .image-container {
+    border-radius: 10px; /* Adjust for smaller devices */
+  }
+}
+
   </style>
 </head>
 <body>
@@ -227,22 +259,29 @@
           <a href="tel:+123456789" target="_blank" class="phone-btn">Phone Us</a>
         </div>
       </header>
-<section class="rsvp-section">
-  <div class="rsvp-container">
-    <div class="rsvp-header">
-      <h1>You Are Invited to DigitalWorks & More's VIP Hollywood Glamour Party</h1>
-      <p>Event: Media Agency Appreciation Party</p>
-      <p><strong>Venue:</strong> The Marriot Kuala Lumpur, Malaysia</p>
-      <p><strong>Time:</strong> 4:00 PM</p>
-      <p><strong>Date:</strong> Saturday 23rd November 2024</p>
-      <p>Please fill in your details below to RSVP.</p>
-    </div>
-    
-    <!-- Embed Google Form -->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUUGGQvaIw82ZgaPkc4UqN9U0kbWykS8qIjOjaepMbzFDYvw/viewform?embedded=true" width="640" height="10000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    
-  </div>
-</section>
+      <section class="rsvp-section">
+        <div class="rsvp-container">
+          <!-- Image with blur effect -->
+          <div class="image-container">
+            <img src="assets/party.png" alt="Event Banner" class="responsive-image">
+            <div class="blur-overlay"></div>
+          </div>
+      
+          <!-- RSVP Header -->
+          <div class="rsvp-header">
+            <h1>You Are Invited to DigitalWorks & More's VIP Hollywood Glamour Party</h1>
+            <p>Event: Media Agency Appreciation Party</p>
+            <p><strong>Venue:</strong> The Marriot Kuala Lumpur, Malaysia</p>
+            <p><strong>Time:</strong> 4:00 PM</p>
+            <p><strong>Date:</strong> Saturday 23rd November 2024</p>
+            <p>Please fill in your details below to RSVP.</p>
+          </div>
+      
+          <!-- Embed Google Form -->
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUUGGQvaIw82ZgaPkc4UqN9U0kbWykS8qIjOjaepMbzFDYvw/viewform?embedded=true" width="640" height="10000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+      </section>
+      
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
