@@ -759,3 +759,27 @@ body {
   margin-top: 20px;
   font-size: 14px;
 }
+
+/* Add styles for the "Under Construction" banner */
+.under-construction {
+  background-color: #f1c40f; /* Yellow background for visibility */
+  color: #2c3e50; /* Dark text color */
+  text-align: center;
+  padding: 5px 0;
+  font-size: 7px;
+  font-weight: bold;
+  height: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays on top of other content */
+}
+.under-construction img {
+  max-width: 10px; /* Adjust the size of the icon */
+  vertical-align: middle;
+  margin-right: 2px;
+}
+.under-construction p {
+  display: inline; /* Display text inline with the image */
+}
