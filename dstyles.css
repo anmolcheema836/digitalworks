@@ -285,6 +285,7 @@ html, body {
   .buttons {
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: 10px; /* Add space between stacked buttons */
   }
 
