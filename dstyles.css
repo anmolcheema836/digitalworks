@@ -5,6 +5,12 @@ body {
   box-sizing: border-box;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 .header {
   background-color: #007fff; /* Azure color */
@@ -260,7 +266,7 @@ body {
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
   .hero-content {
-    max-width: 90%; /* Adjust for smaller screens */
+    max-width: 100%; /* Adjust for smaller screens */
     text-align: center;
     padding: 15px; /* Reduce padding on smaller screens */
   }
@@ -555,128 +561,181 @@ body {
 }
 
 /* Team Section */
-/* Team Section */
-.team-section {
-  text-align: center;
-  padding: 3rem 1rem;
+* {
+  font-family: Nunito, sans-serif;
 }
 
-.team-heading {
-  font-size: 2rem;
-  color: black;
-  margin-bottom: 0.5rem;
+.responsive-cell-block {
+  min-height: 75px;
 }
 
-.team-subheading {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 2rem;
+.text-blk {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  line-height: 25px;
 }
 
-.team-container {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-/* Each Team Member Container */
-.team-member {
-  position: relative;
-  width: 350px;
-  height: 400px;
-  margin-bottom: 2rem;
-  overflow: hidden;
-}
-
-/* Snippet Container with background image */
-.snippet-container {
+.responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
   width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  padding-top: 200px; /* Adjust to push the content down on desktop */
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  justify-content: space-evenly;
+}
+
+.team-head-text {
+  font-size: 48px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.team-head-text {
+  line-height: 50px;
+  width: 100%;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 50px;
+  margin-left: 0px;
+}
+
+.container {
+  max-width: 1380px;
+  margin-top: 60px;
+  margin-right: auto;
+  margin-bottom: 60px;
+  margin-left: auto;
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  padding-left: 30px;
+}
+
+.card {
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
+  padding-top: 30px;
+  padding-right: 25px;
+  padding-bottom: 30px;
+  padding-left: 25px;
 }
 
-/* Name and Designation Box (Info Box) */
-.info-box {
-  margin-top: 10px;
-  background-color: #1975d1; /* Blue background */
-  color: white;
-  text-align: center;
-  padding: 10px 15px;
-  z-index: 10;
+.card-container {
+  width: 280px;
+  margin-top: 0px;
+  margin-right: 10px;
+  margin-bottom: 25px;
+  margin-left: 10px;
 }
 
 .name {
-  font-size: .8rem;
-  font-weight: bold;
+  margin-top: 20px;
+  margin-right: 0px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  font-size: 18px;
+  font-weight: 800;
 }
 
-.designation {
-  font-size: 0.7rem;
+.position {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
 }
 
-/* Snippet Text under Info Box */
-.snippet {
-  background-color: rgb(255, 255, 255);
-  padding: 2rem;
-  text-align: center;
-  position: absolute;
-  font-size: 0.6rem;
-  color: black;
-  margin-left: 10px;
-  margin-right: 10px;
+.feature-text {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  color: rgb(122, 122, 122);
+  line-height: 30px;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .team-container {
-    flex-direction: column;
-    align-items: center;
+.social-icons {
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.team-image-wrapper {
+  clip-path: circle(50% at 50% 50%);
+  width: 130px;
+  height: 130px;
+}
+
+.team-member-image {
+  max-width: 100%;
+}
+
+@media (max-width: 500px) {
+  /* Make cards take full width on mobile */
+  .card-container {
+    width: 100%;
+    margin: 0 0 25px 0;
   }
 
-  .team-member {
-    width: 90%;  /* Make the team member container width smaller */
-    height: auto; /* Allow the height to adjust based on content */
-    margin-bottom: 2rem;
-
-  }
-  img {
-    width: 100%; /* Make image width 100% of the container */
-    height: auto; /* Ensure the height scales proportionally */
-    object-fit: cover; /* Ensures images fit the container without distortion */
+  /* Adjust the team header text size for smaller screens */
+  .team-head-text {
+    font-size: 36px;
+    margin-bottom: 30px;
   }
 
-  /* Ensure the Info Box and Snippet Box Stack Properly on Mobile */
-  .snippet-container {
-    padding-top: 500px; 
-    display: flex;
-    flex-direction: column;/* Ensure space between info box and snippet box */
-    align-items: center;
+  /* Adjust font size of names and positions */
+  .name {
+    font-size: 16px;
+    margin-top: 15px;
   }
 
-  .info-box {
-    width: 70%; /* Ensure it fills the width on mobile */
-    padding-left: 10px;
-    padding-right: 10px;
-    position: relative; /* Make sure it's positioned relative to its container */
+  .position {
+    font-size: 14px;
   }
 
-  .snippet {
-    width: 80%;
-    font-size: 0.9rem;
-    position: relative; /* Remove absolute positioning so it stays within the flow */
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: -90px;
+  /* Adjust margins and padding for mobile */
+  .container {
+    padding: 0 15px;
+  }
+
+  /* Adjust card padding for smaller screens */
+  .card {
+    padding: 20px 15px;
+  }
+
+  /* Stack images vertically and adjust size */
+  .team-image-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Ensure social icons are responsive */
+  .social-icons {
+    width: 60px;
+    justify-content: space-around;
+  }
+
+  /* Decrease font size for feature text */
+  .feature-text {
+    font-size: 14px;
+    line-height: 25px;
+    margin-bottom: 15px;
+  }
+
+  /* Adjust spacing for mobile screens */
+  .text-blk {
+    line-height: 40px;
   }
 }
+
 
 /* Why We Love What We Do Section */
 .why-we-love {
@@ -707,6 +766,76 @@ body {
   border-radius: 10px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+/*Facts about our agency*/
+.agency-facts {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.facts-heading {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.facts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.fact-item {
+  width: 150px;
+  text-align: center;
+}
+
+.fact-value {
+  font-size: 24px;
+  color: blue;
+  font-weight: bold;
+}
+
+.fact-description {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .fact-item {
+    width: 100px; /* Shrink the width for smaller screens */
+  }
+
+  .fact-value {
+    font-size: 20px; /* Slightly smaller font size */
+  }
+
+  .fact-description {
+    font-size: 14px; /* Slightly smaller font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .facts-container {
+    flex-direction: column; /* Stack items vertically for very small screens */
+    gap: 10px;
+  }
+
+  .fact-item {
+    width: 100%; /* Full width for each fact item */
+  }
+
+  .fact-value {
+    font-size: 18px; /* Reduce font size further */
+  }
+
+  .fact-description {
+    font-size: 12px;
+  }
+}
+
 /*footer*/
 .footer {
   background-color: #333;
