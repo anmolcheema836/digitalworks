@@ -207,7 +207,7 @@ html, body {
   flex-direction: column;
   justify-content: flex-start;
   padding: 20px; /* Uniform padding */
-  padding-top: 40px;
+  padding-top: 80px;
   border-radius: 10px;
   z-index: 2;
 }
@@ -265,7 +265,7 @@ html, body {
 }
 
 /* Mobile Responsiveness */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 786px) {
   .hero-content {
     max-width: 100%; /* Adjust for smaller screens */
     text-align: center;
@@ -274,6 +274,7 @@ html, body {
   }
 
   .hero h1 {
+    padding-top: 40px;
     font-size: 2em; /* Adjusted title size */
   }
 
