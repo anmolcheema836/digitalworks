@@ -703,7 +703,7 @@ html, body {
 
   /* Adjust margins and padding for mobile */
   .container {
-    padding: 0 15px;
+    padding: 0 0px;
   }
 
   /* Adjust card padding for smaller screens */
