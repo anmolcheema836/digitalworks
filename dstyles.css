@@ -269,7 +269,7 @@ html, body {
   .hero-content {
     max-width: 100%; /* Adjust for smaller screens */
     text-align: center;
-    padding-top: 50px;
+    padding-top: 60px;
     padding: 15px; /* Reduce padding on smaller screens */
   }
 
