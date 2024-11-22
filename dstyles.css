@@ -606,14 +606,23 @@ html, body {
   justify-content: space-between;
 }
 
+/* Image Box around the team member image */
 .team-image-wrapper {
-  clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%); /* Circle for the image */
   width: 130px;
   height: 130px;
+  padding: 0px; /* Padding inside the image box */
+  background-color: #fff; /* Optional background color for the box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Space below the image */
 }
 
 .team-member-image {
   max-width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the box without distortion */
 }
 
 @media (max-width: 500px) {
@@ -673,6 +682,7 @@ html, body {
     line-height: 40px;
   }
 }
+
 
 
 /* Why We Love What We Do Section */
